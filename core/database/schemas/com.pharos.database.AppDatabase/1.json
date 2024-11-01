@@ -1,0 +1,66 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "d7c1e6f2e13a418458080054bd47b6a7",
+    "entities": [
+      {
+        "tableName": "UserEntity",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `age` INTEGER, `experience_level` TEXT, `goal` TEXT, `height_cm` INTEGER, `injuries_or_conditions` TEXT, `training_frequency_per_week` INTEGER, `weight_kg` INTEGER, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "age",
+            "columnName": "age",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "experience_level",
+            "columnName": "experience_level",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "goal",
+            "columnName": "goal",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "height_cm",
+            "columnName": "height_cm",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "injuries_or_conditions",
+            "columnName": "injuries_or_conditions",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "training_frequency_per_week",
+            "columnName": "training_frequency_per_week",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "weight_kg",
+            "columnName": "weight_kg",
+            "affinity": "INTEGER"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd7c1e6f2e13a418458080054bd47b6a7')"
+    ]
+  }
+}
